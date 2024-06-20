@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { getTodos } from "./apis/todos";
 import { useEffect, useState } from "react";
+import { ReactDOM } from "react";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -18,7 +19,6 @@ function App() {
       {todos.map((todo) => (
         <li>
           <h2>{todo.title}</h2>
-          <span>{todo.completed}</span>
         </li>
       ))}
     </ul>

@@ -3,6 +3,8 @@ import "./App.css";
 import { getTodos } from "./apis/todos";
 import { useEffect, useState } from "react";
 import { ReactDOM } from "react";
+import { Router } from "react-router-dom";
+import { BrowserRouter, Router, Route, Link } from "react-router-dom";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -15,14 +17,25 @@ function App() {
     setAsyncTodos();
   }, []);
   return (
-    <ul>
-      {todos.map((todo) => (
-        <li>
-          <h2>{todo.title}</h2>
-        </li>
-      ))}
-    </ul>
+    <Router>
+      <div>
+        <ul>
+          {todos.map((todo) => (
+            <li>
+              <Link Link to={`/todo/${todos.id}`}>
+                {todo.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <Route path="/" Component={TodoDetail} />
+      </div>
+    </Router>
   );
+}
+
+function TodoDetail({ mech }) {
+  return <h2>todo ID: {mech.params.id}</h2>;
 }
 
 export default App;

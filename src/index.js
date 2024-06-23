@@ -15,7 +15,7 @@ import TodoDetail from "./App";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="todos/:id" element={<TodoDetail />} />
+      <Route path="todo/:id" element={<TodoDetail />} />
     </Route>
   )
 );

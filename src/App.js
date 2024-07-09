@@ -24,6 +24,14 @@ function App() {
     };
     setAsyncTodos();
   }, []);
+
+  // useEffect
+  // useEffect(callbackFn,dependencies)
+  // === useEffect(()=>{},[])
+  // 의존성이 빈 배열이면([]) 처음 mount 시점에만 1번 실행
+
+  // 의존성 배열에 state가 있는 경우, 해당 state가 변뎡되면 콜백함수 실행(updated)
+
   return (
     <div>
       <ul>

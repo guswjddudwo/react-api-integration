@@ -14,7 +14,8 @@ function App() {
       target.style.opacity = entry.isIntersecting ? 1 : 0;
     });
   };
-
+  // observer : 주체의 상태 변화를 감지하고 이에 따라 동작을 수행하는 객체
+  // 뷰포트에 들어와 있는지 감지함! ! 스크롤 할때 알 수 있음
   const observer = useRef(new IntersectionObserver(observerCallback));
 
   useEffect(() => {
